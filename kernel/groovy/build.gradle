@@ -69,21 +69,21 @@ jar {
   }
 }
 
-jacocoTestReport {
-  reports {
-    html.enabled = true
-    xml.enabled = false
-    csv.enabled = false
-  }
-  afterEvaluate {
-    classDirectories = files(classDirectories.files.collect {
-      fileTree(dir: it,
-              exclude: ['com/twosigma/beakerx/groovy/autocomplete/GroovyParser*',
-                        'com/twosigma/beakerx/groovy/autocomplete/GroovyLexer*'
-              ])
-    })
-  }
-}
+// jacocoTestReport {
+//   reports {
+//     html.enabled = true
+//     xml.enabled = false
+//     csv.enabled = false
+//   }
+//   afterEvaluate {
+//     classDirectories = files(classDirectories.files.collect {
+//       fileTree(dir: it,
+//               exclude: ['com/twosigma/beakerx/groovy/autocomplete/GroovyParser*',
+//                         'com/twosigma/beakerx/groovy/autocomplete/GroovyLexer*'
+//               ])
+//     })
+//   }
+// }
 
 task realclean
 realclean.dependsOn(clean)

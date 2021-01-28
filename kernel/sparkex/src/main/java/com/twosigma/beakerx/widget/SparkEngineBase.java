@@ -241,7 +241,7 @@ abstract class SparkEngineBase implements SparkEngine {
 
   private static Iterator getConfigIterator(SparkSession.Builder sparkSessionBuilder) {
     try {
-      Field options = sparkSessionBuilder.getClass().getDeclaredField("org$apache$spark$sql$SparkSession$Builder$$options");
+      Field options = sparkSessionBuilder.getClass().getDeclaredField("options");
       options.setAccessible(true);
       return ((scala.collection.mutable.HashMap) options.get(sparkSessionBuilder)).iterator();
     } catch (Exception e) {

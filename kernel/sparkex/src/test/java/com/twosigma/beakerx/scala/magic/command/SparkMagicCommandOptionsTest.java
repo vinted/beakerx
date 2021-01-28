@@ -41,7 +41,7 @@ public class SparkMagicCommandOptionsTest {
   @Test
   public void parseLongStartOption() {
     //given
-    String options = "--start -v 2.2.1";
+    String options = "--start -v 2.4.7";
     //when
     runOptions(options);
     //then
